@@ -22,6 +22,10 @@
   tw-w-200-px
 }
 
+.search-button input:focus {
+  outline: none;
+}
+
 .trending-subjects {
   @apply
   tw-bg-table-header-bg
@@ -29,3 +33,4 @@
   tw-rounded-4-px
   tw-shadow-lg
 }
+
