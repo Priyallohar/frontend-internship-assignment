@@ -14,6 +14,10 @@ const routes: Routes = [
     component: TrendingSubjectsComponent,
     title: 'Trending Subjects',
   },
+  {
+    path: 'home',
+    component: HomeComponent
+  }
 ];
 
 @NgModule({

@@ -1,6 +1,5 @@
 <div class="tw-m-24-px">
   <div class="tw-mb-24-px tw-text-24-px"> Top {{ booksList.length }} book{{ booksList.length > 1 ? "s" : "" }} on {{ subjectName }}</div>
-
   <ng-container>
     <table class="table-view">
       <thead>
@@ -23,4 +22,6 @@
       </tbody>
     </table>
   </ng-container>
+  <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l tw-mb-24-px tw-mt-24-px " (click)="goToHome()">Go Home
+    </button>
 </div>
