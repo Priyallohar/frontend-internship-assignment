@@ -17,3 +17,5 @@ export class TableViewComponent {
     this.router.navigate(['/home']);;
   }
 }
+
+
