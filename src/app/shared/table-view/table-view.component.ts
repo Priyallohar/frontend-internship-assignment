@@ -7,15 +7,17 @@ import { Router } from '@angular/router';
   templateUrl: './table-view.component.html',
   styleUrls: ['./table-view.component.scss'],
 })
+
 export class TableViewComponent {
   @Input() booksList: Book[] = [];
   @Input() subjectName: string = '';
-
   constructor(private router: Router) {}
 
   goToHome() {
     this.router.navigate(['/home']);;
   }
+
+ 
 }
 
 
