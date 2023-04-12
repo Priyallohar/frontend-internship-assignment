@@ -49,3 +49,21 @@
   }
 }
 
+.text-right{
+  display: flex;
+  justify-content: center;
+  margin: 60px 0px 20px -50px;
+}
+
+.topheader{
+  box-sizing: border-box;
+  margin-bottom: 30px;
+
+  .headerline{
+    display: inline;
+  justify-content:center;
+  margin-left:30%;
+  font-weight: 600;
+  }
+}
+

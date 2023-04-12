@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 
 export class TableViewComponent {
-
   p:number = 1;
   count:number = 10; 
 
@@ -20,6 +19,7 @@ export class TableViewComponent {
   goToHome() {
     this.router.navigate(['/home']);;
   }
+  
  
 }
 

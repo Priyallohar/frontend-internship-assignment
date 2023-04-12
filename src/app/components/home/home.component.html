@@ -8,7 +8,7 @@
       type="text"
       placeholder="Search Books"
       class="tw-border-0 tw-bg-inherit"
-      autocomplete="off"
+     autocomplete="off"
     >
   </div>
 </div>
@@ -20,5 +20,8 @@
         {{ subject.name }}
       </li>
     </ul>
+  </section>
+  <section class="topictable" *ngIf="searchResults.length > 0" >
+    <front-end-internship-assignment-table-view [booksList]="searchResults" class="home-table"></front-end-internship-assignment-table-view>
   </section>
 </div>

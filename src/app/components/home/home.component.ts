@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, filter } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { TableViewComponent } from '../../shared/table-view/table-view.component';
+
 
 
 @Component({
@@ -10,9 +13,12 @@ import { debounceTime, filter } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   bookSearch: FormControl;
+  searchResults: any[];
+  @ViewChild(TableViewComponent) tableView!: TableViewComponent
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.bookSearch = new FormControl('');
+    this.searchResults = [];
   }
 
   trendingSubjects: Array<any> = [
@@ -29,6 +35,12 @@ export class HomeComponent implements OnInit {
         debounceTime(300),
       ).
       subscribe((value: string) => {
+        this.http.get(`https://openlibrary.org/search.json?title=${value}&author=${value}`)
+          .subscribe((response: any) => {
+            this.searchResults = response.docs;
+            this.tableView.booksList = this.searchResults;
+          });
       });
   }
 }
+

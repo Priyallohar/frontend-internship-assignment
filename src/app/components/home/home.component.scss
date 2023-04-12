@@ -34,3 +34,30 @@
   tw-shadow-lg
 }
 
+.topictable{
+  margin-left: 40px;
+  display: flex;
+  justify-content: center;
+  @apply
+  tw-bg-table-header-bg
+  tw-p-12-px
+  tw-rounded-4-px
+  tw-shadow-lg
+}
+
+
+:host ::ng-deep .home-table {
+  button{
+  display:none;}
+}
+
+:host ::ng-deep .home-table .headerline{
+  margin-top: -60px;
+}
+
+:host ::ng-deep .home-table .maincontainer{
+  margin: 0;
+}
+
+
+
