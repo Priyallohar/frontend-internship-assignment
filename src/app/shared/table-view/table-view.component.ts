@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 })
 
 export class TableViewComponent {
+
+  p:number = 1;
+  count:number = 10; 
+
   @Input() booksList: Book[] = [];
   @Input() subjectName: string = '';
   constructor(private router: Router) {}
@@ -16,8 +20,8 @@ export class TableViewComponent {
   goToHome() {
     this.router.navigate(['/home']);;
   }
-
  
 }
 
 
+ 

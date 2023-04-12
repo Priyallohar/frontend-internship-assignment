@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from '../app/spinner/spinner.component';
 import { LoadingInterceptor } from './loading.interceptor';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LoadingInterceptor } from './loading.interceptor';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule 
   ],
   providers: [
     {
