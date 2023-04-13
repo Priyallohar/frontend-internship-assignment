@@ -2,7 +2,7 @@
     <div class="topheader">
     <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l tw-mb-24-px  tw-shadow-lg"  style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)"  (click)="goToHome()">Go Home
     </button>
-  <div class=" headerline tw-mb-24-px tw-text-24-px"> Top {{ booksList.length }} book{{ booksList.length > 1 ? "s" : "" }} on {{ subjectName }}</div>
+  <div class=" headerline tw-mb-24-px tw-text-24-px"> Top {{ (booksList || []).length }} book{{ (booksList || []).length > 1 ? "s" : "" }} on {{ subjectName }}</div>
 </div>
   <ng-container>
     <table class="table-view">
@@ -19,7 +19,7 @@
             <a class="tw-no-underline" href="https://openlibrary.org{{ book.key }}" target="_blank">{{ book.title }}</a>
           </td>
           <td>
-            {{ book.authors.length > 0 ? book.authors[0].name : "Unknown" }}
+            {{(book.authors || []).length > 0 ? book.authors[0].name : "Unknown" }}
           </td>
           <td>{{ book.first_publish_year }}</td>
         </tr>

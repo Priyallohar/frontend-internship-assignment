@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
     { name: 'Crypto' },
   ];
 
+
   ngOnInit(): void {
     this.bookSearch.valueChanges
       .pipe(
