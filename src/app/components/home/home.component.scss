@@ -61,4 +61,22 @@
 }
 
 
+.no-results{
+  display: flex;
+  justify-content: center;
+  margin:-65px auto 0px;
+  width: 30%;
+  text-align: center;
+  @apply
+  tw-bg-table-header-bg
+  tw-p-12-px
+  tw-rounded-4-px
+  tw-shadow-lg;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 30px;
+  }
+}
+
+
 

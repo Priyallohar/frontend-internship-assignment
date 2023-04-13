@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
         debounceTime(300),
       )
       .subscribe((value: string) => {
+        
         this.http.get(`https://openlibrary.org/search.json?q=${value}`)
         .subscribe((response: any) => {
           this.searchResults = response.docs.map((book: any) => ({

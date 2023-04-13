@@ -26,3 +26,9 @@
   </section>
 </div>
 
+<div class="no-results" *ngIf="searchResults && searchResults.length === 0 && bookSearch.value">
+  No results found for &emsp; "{{ bookSearch.value }}"
+</div>
+
+
+
