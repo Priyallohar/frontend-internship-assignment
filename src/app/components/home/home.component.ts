@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
         let bookSearchResponse;
         let authorSearchResponse;
   
-        this.http.get(`https://openlibrary.org/search.json?q=${value}`)
+        this.http.get(`https://openlibrary.org/search.json?title=${value}`)
           .subscribe((response: any) => {
             bookSearchResponse = response;
             const bookResults = bookSearchResponse.docs.map((book: any) => ({
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
               title: book.top_work,
               key: book.key,
               authors: [{name:book.name}],
-              first_publish_year: book.first_publish_year || 1899,
+              first_publish_year: book.first_publish_year || 1111,
               author_name: book.name || "Unknown"
             }));
             this.searchResults = authorResults;
