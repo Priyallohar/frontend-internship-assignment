@@ -41,19 +41,34 @@ export class HomeComponent implements OnInit {
         debounceTime(300),
       )
       .subscribe((value: string) => {
-        
+  
         this.http.get(`https://openlibrary.org/search.json?q=${value}`)
-        .subscribe((response: any) => {
-          this.searchResults = response.docs.map((book: any) => ({
-            title: book.title,
-            key: book.key,
-            authors: book.author_name?.map((name: string) => ({ name })) || [],
-            first_publish_year: book.first_publish_year,
-            author_name: book.author_name?.join(", ") || "Unknown"
-          }));
-          this.tableView.booksList = this.searchResults;
-        });
-      }); 
+          .subscribe((response: any) => {
+            this.searchResults = response.docs.map((book: any) => ({
+              title: book.title,
+              key: book.key,
+              authors: book.author_name?.map((name: string) => ({ name })) || [],
+              first_publish_year: book.first_publish_year,
+              author_name: book.author_name?.join(", ") || "Unknown"
+            }));
+            this.tableView.booksList = this.searchResults;
+          });
+  
+        this.http.get(`https://openlibrary.org/search/authors.json?q=${value}`)
+          .subscribe((response: any) => {
+            this.searchResults = response.docs.map((book: any) => ({
+              title: book.top_work,
+              key: book.key,
+              authors: [{name:book.name}],
+              first_publish_year: book.first_publish_year || 1899,
+              author_name: book.name || "Unknown"
+            }));
+             //this.tableView.booksList = this.searchResults;
+           this.tableView.booksList = [...this.tableView.booksList, ...this.searchResults]
+          });
+      });
   }
-}
+}  
+
+          
 
